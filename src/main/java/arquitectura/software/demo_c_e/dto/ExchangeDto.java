@@ -5,13 +5,15 @@ import java.math.BigDecimal;
 public class ExchangeDto {
     private RequestDto request;
     private BigDecimal result;
+    private InfoDto info;
 
     public ExchangeDto() {
     }
 
-    public ExchangeDto(RequestDto request, BigDecimal result) {
+    public ExchangeDto(RequestDto request, BigDecimal result, InfoDto info) {
         this.request = request;
         this.result = result;
+        this.info = info;
     }
 
     public RequestDto getRequest() {
@@ -30,11 +32,20 @@ public class ExchangeDto {
         this.result = result;
     }
 
+    public InfoDto getInfo() {
+        return info;
+    }
+
+    public void setInfo(InfoDto info) {
+        this.info = info;
+    }
+
     @Override
     public String toString() {
         return "ExchangeDto{" +
                 "request=" + request +
                 ", result=" + result +
+                ", info=" + info +
                 '}';
     }
 }

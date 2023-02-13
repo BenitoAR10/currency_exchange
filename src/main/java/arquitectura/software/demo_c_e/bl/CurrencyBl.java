@@ -36,9 +36,6 @@ public class CurrencyBl {
             //System.out.println("hola");
             System.out.println(result);
 
-            //ObjectMapper mapper = new ObjectMapper();
-            //ExchangeDto exchangeDto = mapper.readValue(result, ExchangeDto.class);
-            //System.out.println("hola");
             return null;
 
         } catch (Exception e){
