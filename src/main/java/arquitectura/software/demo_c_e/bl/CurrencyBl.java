@@ -1,6 +1,7 @@
 package arquitectura.software.demo_c_e.bl;
 
 import arquitectura.software.demo_c_e.dto.ExchangeDto;
+import arquitectura.software.demo_c_e.exception.ApiExepcion;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
