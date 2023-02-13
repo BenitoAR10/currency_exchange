@@ -2,6 +2,7 @@ package arquitectura.software.demo_c_e.bl;
 
 import arquitectura.software.demo_c_e.dto.ExchangeDto;
 import arquitectura.software.demo_c_e.exception.ApiExepcion;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -34,9 +35,10 @@ public class CurrencyBl {
             logger.info("Procesando la respuesta");
             String result = response.body().string();
             //System.out.println("hola");
-            System.out.println(result);
-
-            return null;
+            //System.out.println(result);
+            ObjectMapper mapper = new ObjectMapper();
+            ExchangeDto exchangeDto = mapper.readValue(result, ExchangeDto.class);
+            return exchangeDto;
 
         } catch (Exception e){
             logger.error("Error al llamar la API", e);

@@ -1,0 +1,15 @@
+<!-- Generar xml para logback -->
+<configuration debug="false">
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>/workspace/JAVA/ApiConvertirDivisas/Logs/logs.txt</file>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <root level="debug">
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>
+
+
+

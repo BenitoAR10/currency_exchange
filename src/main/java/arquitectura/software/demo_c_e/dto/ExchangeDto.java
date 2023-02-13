@@ -3,25 +3,29 @@ package arquitectura.software.demo_c_e.dto;
 import java.math.BigDecimal;
 
 public class ExchangeDto {
-    private RequestDto request;
+    private RequestDto query;
     private BigDecimal result;
     private InfoDto info;
+    private boolean success;
+    private String date;
 
     public ExchangeDto() {
     }
 
-    public ExchangeDto(RequestDto request, BigDecimal result, InfoDto info) {
-        this.request = request;
+    public ExchangeDto(RequestDto query, BigDecimal result, InfoDto info, boolean success, String date) {
+        this.query = query;
         this.result = result;
         this.info = info;
+        this.success = success;
+        this.date = date;
     }
 
-    public RequestDto getRequest() {
-        return request;
+    public RequestDto getQuery() {
+        return query;
     }
 
-    public void setRequest(RequestDto request) {
-        this.request = request;
+    public void setQuery(RequestDto query) {
+        this.query = query;
     }
 
     public BigDecimal getResult() {
@@ -40,12 +44,30 @@ public class ExchangeDto {
         this.info = info;
     }
 
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
     @Override
     public String toString() {
         return "ExchangeDto{" +
-                "request=" + request +
+                "query=" + query +
                 ", result=" + result +
                 ", info=" + info +
+                ", success=" + success +
+                ", date='" + date + '\'' +
                 '}';
     }
 }
