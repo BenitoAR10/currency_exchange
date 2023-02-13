@@ -16,6 +16,10 @@ public class CurrencyBl {
     Logger logger = LoggerFactory.getLogger(CurrencyBl.class);
 
     public ExchangeDto exchange(String from, String to, BigDecimal amount){
+        if(amount.compareTo(BigDecimal.ZERO) <= 0){
+            throw new IllegalArgumentException("El monto debe ser mayor a 0");
+        }
+
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
@@ -28,7 +32,7 @@ public class CurrencyBl {
             Response response = client.newCall(request).execute();
             logger.info("Procesando la respuesta");
             String result = response.body().string();
-            System.out.println("hola");
+            //System.out.println("hola");
             System.out.println(result);
 
             //ObjectMapper mapper = new ObjectMapper();
