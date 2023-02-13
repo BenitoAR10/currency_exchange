@@ -16,18 +16,21 @@ public class CurrencyBl {
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()
-                .url("https://api.apilayer.com/exchangerates_data/convert?from=" + from + "&to=" + to + "&amount=" + amount)
+                .url("https://api.apilayer.com/exchangerates_data/convert?to="+to +"& from=" +from+"& amount="+ amount)
                 .addHeader("apikey", "YEraXsSahmYnVTklREwJ6uvCDwm3VpVS")
                 .build();
 
         try{
             Response response = client.newCall(request).execute();
             String result = response.body().string();
+            System.out.println("hola");
             System.out.println(result);
 
-            ObjectMapper mapper = new ObjectMapper();
-            ExchangeDto exchangeDto = mapper.readValue(result, ExchangeDto.class);
-            return exchangeDto;
+            //ObjectMapper mapper = new ObjectMapper();
+            //ExchangeDto exchangeDto = mapper.readValue(result, ExchangeDto.class);
+            //System.out.println("hola");
+            return null;
+
         } catch (Exception e){
             throw new RuntimeException("Error al llamar la API");
         }
