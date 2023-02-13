@@ -19,7 +19,8 @@ public class CurrencyBl {
 
     public ExchangeDto exchange(String from, String to, BigDecimal amount){
         if(amount.compareTo(BigDecimal.ZERO) <= 0){
-            throw new IllegalArgumentException("El monto debe ser mayor a 0");
+            logger.error("El monto no puede ser negativo");
+            throw new IllegalArgumentException("El monto no puede ser negativo");
         }
 
         OkHttpClient client = new OkHttpClient();
